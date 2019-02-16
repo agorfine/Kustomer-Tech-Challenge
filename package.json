@@ -1,0 +1,18 @@
+{
+  "name": "kustomer",
+  "version": "1.0.0",
+  "description": "Tech Challenge for Kustomer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-converter": "node customerData.js",
+    "postMethod": "node script.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "csvtojson": "^2.0.8",
+    "rename-keys": "^2.0.1"
+  }
+}
