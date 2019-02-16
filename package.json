@@ -12,7 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "csvtojson": "^2.0.8",
-    "rename-keys": "^2.0.1"
+    "csvtojson": "^2.0.8"
   }
 }

@@ -3,7 +3,6 @@
 // required inputs
 const csvFilePath= './Data.csv'
 const csv = require('csvtojson')
-const renameKeys = require('rename-keys');
 
 
 // utilized the csvtojson npm package
