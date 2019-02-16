@@ -12,9 +12,7 @@ csv()
 	.then((jsonObj)=>{
 		// console.log(jsonObj)
 		return(jsonObj)
-		// let customerDataString = JSON.stringify(jsonObj)
-		// console.log(customerDataString)
-}))
+	}))
 
 // refractor JSON parameters to match Kustomer required parameters
 let refractoredData = async()=>{
