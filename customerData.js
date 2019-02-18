@@ -1,44 +1,43 @@
 // CONVERT CSV FILE TO JSON
 
+
 // required inputs
 const csvFilePath= './Data.csv'
 const csv = require('csvtojson')
 
-
-
-
-let customerDataJSON= (
-csv()
+// utilized the csvtojson npm package
+const customerDataJSON= (
+	csv()
 	.fromFile(csvFilePath)
 	.then((jsonObj)=>{
+		// console.log(jsonObj)
 		return(jsonObj)
-		console.log(jsonObj)
-}))
-
+	})
+	.catch((e) =>{
+		console.log("failed")
+	})
+)
 
 // refactor JSON parameters to match Kustomer required parameters
-let refactoredData = async()=>{
+const refactoredData = async ()=>{
+	let newData;
 	try{ 
-		let newData = customerDataJSON ? '' : customerDataJSON.map(obj => {
-			// console.log(`${obj.firstName} ${obj.lastName}`)
+		newData = await customerDataJSON.map(obj => {
 			obj = {...obj, firstName: `${obj.firstName} ${obj.lastName}`}
 			// console.log(obj)
-			
-			obj['name']= obj['firstName']
+			obj['fullName']= obj['firstName']
 			delete obj['firstName']
 			delete obj['lastName']
-			
-			return Promise.resolve(obj)
+			let string = JSON.stringify(obj)
+			// console.log(string)
+			return string 
 		})
-		// console.log('THIS IS NEW DATA: ', newData)
 	}
 	catch(e){
 		return ('failed')
 	}
-	
+	// console.log('THIS IS NEW DATA: ', newData)
+	return newData
 }
 
-let callback = refactoredData()
-
-
-module.exports = callback
+module.exports = refactoredData()
