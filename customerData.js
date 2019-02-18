@@ -16,8 +16,8 @@ csv()
 }))
 
 
-// refractor JSON parameters to match Kustomer required parameters
-let refractoredData = async()=>{
+// refactor JSON parameters to match Kustomer required parameters
+let refactoredData = async()=>{
 	try{ 
 		let newData = customerDataJSON ? '' : customerDataJSON.map(obj => {
 			// console.log(`${obj.firstName} ${obj.lastName}`)
@@ -38,40 +38,7 @@ let refractoredData = async()=>{
 	
 }
 
-let callback = refractoredData()
-
-// function Data() {
-// 	let customerDataJSON= (
-// 		csv()
-// 			.fromFile(csvFilePath)
-// 			.then((jsonObj)=>{
-// 				return(jsonObj)
-// 	}))
-
-// 	this.customerData = customerDataJSON,
-
-// 	this.refractoredData= async()=>{
-// 		try{
-// 			let newData = await customerDataJSON.map(obj => {
-// 				obj = {...obj, firstName: `${obj.firstName} ${obj.lastName}`}
-
-// 				obj['name']= obj['firstName']
-// 				delete obj['firstName']
-// 				delete obj['lastName']
-				
-// 				return obj
-// 			})
-// 			// console.log('THIS IS NEW DATA: ', newData)
-// 		}
-// 		catch(e){
-// 			return ('failed')
-// 		}
-		
-// 	}
-// 	}
-	
-
-// const data = new Data()
+let callback = refactoredData()
 
 
 module.exports = callback
